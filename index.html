@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0e16" />
+  <title>Joshua Lourens — Junior Software Developer</title>
+  <meta name="description" content="Joshua Marc Lourens — junior software developer building secure desktop apps, cloud web platforms, and clean code in C#, .NET, Azure and Java." />
+  <meta name="author" content="Joshua Marc Lourens" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Joshua Lourens — Junior Software Developer" />
+  <meta property="og:description" content="Secure desktop apps, cloud web platforms, and clean code in C#, .NET, Azure & Java." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon: JL monogram (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0e16'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' text-anchor='middle' fill='%2333e1ed'%3EJL%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Glow cursor (desktop) -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="brand" aria-label="Joshua Lourens — home">
+        <svg class="brand__mark" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
+          <rect x="3" y="3" width="94" height="94" rx="22" fill="none" stroke="var(--accent)" stroke-width="3"/>
+          <text x="50" y="67" font-family="JetBrains Mono, monospace" font-size="46" font-weight="700" text-anchor="middle" fill="var(--accent)">JL</text>
+        </svg>
+        <span class="brand__name">Joshua&nbsp;Lourens</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#contact" class="nav__cta">Let's talk</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow"><span class="dot"></span> Available for junior developer roles</p>
+        <h1 class="hero__title">
+          Hi, I'm <span class="grad">Joshua&nbsp;Lourens</span>.
+        </h1>
+        <h2 class="hero__role">
+          <span class="prompt">&gt;</span>
+          <span id="typewriter" class="typewriter"></span><span class="caret" aria-hidden="true"></span>
+        </h2>
+        <p class="hero__lead">
+          I build software that's <strong>secure</strong>, <strong>scalable</strong>, and actually pleasant to use —
+          from cloud-hosted web platforms to NLP-driven desktop apps. Currently studying software development
+          and shipping real projects in C#, .NET, Azure and Java.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View my work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          <a href="https://github.com/marclourens19" target="_blank" rel="noopener" class="btn btn--ghost btn--icon" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+        </div>
+
+        <ul class="hero__stats">
+          <li><span class="num" data-count="5">0</span><span class="lbl">Shipped projects</span></li>
+          <li><span class="num" data-count="6">0</span><span class="lbl">Languages &amp; stacks</span></li>
+          <li><span class="num" data-count="4">0</span><span class="lbl">Domains explored</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="section__head reveal">
+        <span class="section__index">01</span>
+        <h2 class="section__title">About me</h2>
+        <span class="section__line"></span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__bio reveal">
+          <div class="about__intro">
+            <div class="about__avatar">
+              <img src="assets/profile.png" alt="Portrait of Joshua Marc Lourens" width="168" height="168"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+              <span class="about__avatar-fallback" aria-hidden="true">JL</span>
+            </div>
+            <div class="about__intro-text">
+              <span class="about__name">Joshua Marc Lourens</span>
+              <span class="about__tag">Junior Software Developer</span>
+            </div>
+          </div>
+          <p>
+            I'm <strong>Joshua Marc Lourens</strong>, a software development student based in South Africa,
+            focused on becoming a junior developer who ships polished, dependable software.
+          </p>
+          <p>
+            My favourite kind of problem sits where <strong>good engineering meets real people</strong> —
+            a chatbot that teaches cybersecurity without lecturing, a booking system that quietly refuses
+            to double-book a venue, an interface that just makes sense. I care about clean architecture,
+            separating concerns, and handling the unhappy paths (offline modes, validation, errors) as
+            carefully as the happy ones.
+          </p>
+          <p>
+            Right now I'm sharpening my skills across the <strong>.NET ecosystem and Microsoft Azure</strong>,
+            while keeping my fundamentals strong in Java and SQL. I learn fastest by building — every project
+            below started as something I genuinely wanted to exist.
+          </p>
+
+          <ul class="about__facts">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+              Targeting junior software / .NET developer roles
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Based in South Africa · open to remote
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Currently studying software development
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Fast learner, detail-obsessed, ships finished work
+            </li>
+          </ul>
+        </div>
+
+        <aside class="about__terminal reveal" aria-label="About snapshot">
+          <div class="terminal">
+            <div class="terminal__bar">
+              <span class="terminal__dot"></span><span class="terminal__dot"></span><span class="terminal__dot"></span>
+              <span class="terminal__title">joshua@portfolio: ~</span>
+            </div>
+            <pre class="terminal__body"><code><span class="c-prompt">$</span> whoami
+<span class="c-out">Joshua Marc Lourens — junior developer</span>
+
+<span class="c-prompt">$</span> cat focus.txt
+<span class="c-key">backend</span>  → C#, .NET, ASP.NET Core, EF Core
+<span class="c-key">cloud</span>    → Azure SQL, Blob Storage, App Service
+<span class="c-key">desktop</span>  → WPF, XAML, MySQL
+<span class="c-key">games</span>    → Godot 4, GDScript
+<span class="c-key">also</span>     → Java, SQL, JavaScript
+
+<span class="c-prompt">$</span> ./current-goal --status
+<span class="c-ok">[ open to junior dev opportunities ]</span>
+<span class="c-prompt">$</span> <span class="caret caret--term"></span></code></pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="projects">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title">Projects</h2>
+        <span class="section__line"></span>
+      </div>
+
+      <p class="projects__intro reveal">
+        A deliberately diverse mix — a cloud full-stack platform, an NLP desktop app, a typed React app
+        and a 2D game — so you can see how I work across different stacks, engines and problem types.
+      </p>
+
+      <div class="filters reveal" role="tablist" aria-label="Filter projects">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" data-filter="web" role="tab" aria-selected="false">Web &amp; Cloud</button>
+        <button class="filter" data-filter="desktop" role="tab" aria-selected="false">Desktop</button>
+        <button class="filter" data-filter="games" role="tab" aria-selected="false">Game Dev</button>
+        <button class="filter" data-filter="csharp" role="tab" aria-selected="false">C#</button>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid">
+
+        <!-- FEATURED 1 -->
+        <article class="card card--feature reveal" data-tags="desktop csharp">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__media" style="--c1:#0c3540;--c2:#0a1018">
+            <img src="assets/shots/chatbot.png" alt="Cybersecurity Awareness Chatbot screenshot" class="card__shot" onerror="this.remove()" />
+            <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="card__top">
+            <span class="card__badge card__badge--feature">★ Featured</span>
+            <div class="card__links">
+              <a href="https://github.com/marclourens19/cybersecurity-awareness-chatbot" target="_blank" rel="noopener" class="iconlink" aria-label="View source on GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card__title">Cybersecurity Awareness Chatbot</h3>
+          <p class="card__type">WPF Desktop App · NLP · MySQL</p>
+          <p class="card__desc">
+            A conversational desktop assistant that teaches cybersecurity. It runs a knowledge base of
+            <strong>13 topics</strong> with randomized responses, <strong>fuzzy matching</strong> for typo
+            tolerance, and <strong>sentiment detection</strong> that adapts its tone. Layered on top: a
+            MySQL-backed task manager with reminders, a 13-question interactive quiz, a timestamped activity
+            log, and a polished GUI with voice greetings and typewriter text. Built with a clean
+            engine / data / UI separation and graceful offline handling.
+          </p>
+          <ul class="card__tech">
+            <li>C#</li><li>.NET 10</li><li>WPF / XAML</li><li>MySQL</li><li>NLP</li>
+          </ul>
+          <ul class="card__highlights">
+            <li>Fuzzy keyword matching &amp; intent detection</li>
+            <li>Sentiment-aware, empathetic responses</li>
+            <li>Persistent tasks + reminders in MySQL</li>
+          </ul>
+        </article>
+
+        <!-- FEATURED 2 -->
+        <article class="card card--feature reveal" data-tags="web csharp">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__media" style="--c1:#1a2150;--c2:#0a1018">
+            <img src="assets/shots/eventease.png" alt="EventEase screenshot" class="card__shot" onerror="this.remove()" />
+            <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="card__top">
+            <span class="card__badge card__badge--feature">★ Featured</span>
+            <div class="card__links">
+              <a href="https://github.com/marclourens19/eventease-venue-booking" target="_blank" rel="noopener" class="iconlink" aria-label="View source on GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card__title">EventEase — Cloud Event &amp; Venue Booking</h3>
+          <p class="card__type">ASP.NET Core MVC · Microsoft Azure</p>
+          <p class="card__desc">
+            A full event-management platform built to be <strong>cloud-native</strong>. Admins create venues
+            (with image uploads), schedule events, and take bookings — backed by <strong>conflict detection</strong>
+            that prevents double-booking the same venue. It evolved across three phases from a local database
+            to fully hosted Azure infrastructure: <strong>Azure SQL</strong>, <strong>Blob Storage</strong> for
+            images, <strong>App Service</strong> hosting, and a CI/CD workflow.
+          </p>
+          <ul class="card__tech">
+            <li>ASP.NET Core MVC</li><li>C#</li><li>EF Core</li><li>Azure SQL</li><li>Blob Storage</li><li>Bootstrap 5</li>
+          </ul>
+          <ul class="card__highlights">
+            <li>Booking conflict detection (no double-bookings)</li>
+            <li>Azure SQL + Blob Storage + App Service</li>
+            <li>CI/CD pipeline via GitHub Actions</li>
+          </ul>
+        </article>
+
+        <!-- FEATURED 3: NipponQuest -->
+        <article class="card card--feature reveal" data-tags="web csharp games">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__media" style="--c1:#3a1442;--c2:#0a1018">
+            <img src="assets/shots/nipponquest.png" alt="NipponQuest screenshot" class="card__shot" onerror="this.remove()" />
+            <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+          </div>
+          <div class="card__top">
+            <span class="card__badge card__badge--feature">★ Featured</span>
+            <div class="card__links">
+              <a href="https://github.com/marclourens19/NipponQuest" target="_blank" rel="noopener" class="iconlink" aria-label="View source on GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card__title">NipponQuest — Gamified Japanese Learning</h3>
+          <p class="card__type">Full-Stack Web App · Capstone · YugenLabs</p>
+          <p class="card__desc">
+            A web platform that turns learning <strong>Hiragana &amp; Katakana</strong> into an RPG-style quest.
+            Built full-stack with secure user accounts, it layers real game mechanics over study:
+            a custom <strong>XP &amp; leveling system</strong>, a global <strong>leaderboard</strong>,
+            <strong>daily streaks</strong> to build habits, and real-time validation on character practice —
+            all on a mobile-first interface. My capstone project, built to enterprise architecture standards.
+          </p>
+          <ul class="card__tech">
+            <li>ASP.NET Core MVC</li><li>.NET 10</li><li>C#</li><li>EF Core</li><li>SQL Server</li><li>ASP.NET Identity</li><li>Bootstrap</li>
+          </ul>
+          <ul class="card__highlights">
+            <li>XP, levels &amp; persistent progression</li>
+            <li>Global leaderboard + daily streak system</li>
+            <li>Secure auth via ASP.NET Core Identity</li>
+          </ul>
+        </article>
+
+        <!-- SMALL: Godot game -->
+        <article class="card reveal" data-tags="games">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__media" style="--c1:#13294a;--c2:#0a1018">
+            <img src="assets/shots/godot.png" alt="Godot platformer screenshot" class="card__shot" onerror="this.remove()" />
+            <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><line x1="6.5" y1="12" x2="9.5" y2="12"/><line x1="8" y1="10.5" x2="8" y2="13.5"/><line x1="15.5" y1="11" x2="15.51" y2="11"/><line x1="18" y1="13.5" x2="18.01" y2="13.5"/></svg>
+          </div>
+          <div class="card__top">
+            <span class="card__badge">Game Dev</span>
+            <div class="card__links">
+              <a href="https://github.com/marclourens19/godot_tutorial_platformer" target="_blank" rel="noopener" class="iconlink" aria-label="View source on GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card__title">2D Platformer — Godot Engine</h3>
+          <p class="card__type">Game Dev · Godot 4 · GDScript</p>
+          <p class="card__desc">
+            A 2D platformer built in <strong>Godot 4</strong> with GDScript — physics-based jumping,
+            player movement, tilemap level design, sound effects and UI. A hands-on dive into game
+            engines and a clean, scene-organised project structure.
+          </p>
+          <ul class="card__tech"><li>Godot 4</li><li>GDScript</li><li>Game physics</li></ul>
+        </article>
+
+        <!-- SMALL: JLPT N5 Study Companion -->
+        <article class="card reveal" data-tags="web">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__media" style="--c1:#0c3a33;--c2:#0a1018">
+            <img src="assets/shots/jlpt.png" alt="JLPT N5 Study Companion screenshot" class="card__shot" onerror="this.remove()" />
+            <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="card__top">
+            <span class="card__badge card__badge--live"><span class="live-dot" aria-hidden="true"></span> Live demo</span>
+            <div class="card__links">
+              <a href="https://dreamy-palmier-d872e6.netlify.app/" target="_blank" rel="noopener" class="iconlink" aria-label="Open live demo">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/marclourens19/jlpt-n5-study-companion" target="_blank" rel="noopener" class="iconlink" aria-label="View source on GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card__title">JLPT N5 Study Companion</h3>
+          <p class="card__type">React · TypeScript · Tailwind</p>
+          <p class="card__desc">
+            A comprehensive study app for the Japanese JLPT N5 exam: <strong>650+ vocabulary</strong>,
+            all <strong>103 N5 kanji</strong>, and <strong>120+ grammar points</strong>, with interactive
+            flashcards, an adaptive <strong>quiz engine</strong>, mistake review, and a spaced-repetition
+            system. An analytics dashboard tracks readiness, streaks and study time, plus a journal,
+            Pomodoro timer and Web-Speech audio — all in a typed, state-managed React app.
+          </p>
+          <ul class="card__tech">
+            <li>React 19</li><li>TypeScript</li><li>Tailwind</li><li>Vite</li><li>Zustand</li><li>Recharts</li>
+          </ul>
+          <ul class="card__highlights">
+            <li>Adaptive quizzes + spaced repetition</li>
+            <li>Analytics dashboard &amp; progress tracking</li>
+            <li>Web Speech API pronunciation</li>
+          </ul>
+        </article>
+
+        <!-- CTA card -->
+        <article class="card card--add reveal" data-tags="all">
+          <div class="card__addinner">
+            <span class="card__plus">↗</span>
+            <h3 class="card__title">See more on GitHub</h3>
+            <p class="card__desc">
+              More code on my GitHub — coursework, experiments and works in progress.
+            </p>
+            <a href="https://github.com/marclourens19" target="_blank" rel="noopener" class="btn btn--ghost">Browse repos</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section skills" id="skills">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Skills &amp; tools</h2>
+        <span class="section__line"></span>
+      </div>
+
+      <div class="skills__grid">
+        <div class="skillgroup reveal">
+          <h3 class="skillgroup__title"><span class="skillgroup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span> Languages</h3>
+          <ul class="chips">
+            <li>C#</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>GDScript</li><li>SQL</li><li>HTML5</li><li>CSS3</li>
+          </ul>
+        </div>
+
+        <div class="skillgroup reveal">
+          <h3 class="skillgroup__title"><span class="skillgroup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span> Frameworks &amp; libraries</h3>
+          <ul class="chips">
+            <li>.NET</li><li>ASP.NET Core MVC</li><li>WPF / XAML</li><li>Entity Framework Core</li><li>React</li><li>Tailwind CSS</li><li>Bootstrap 5</li>
+          </ul>
+        </div>
+
+        <div class="skillgroup reveal">
+          <h3 class="skillgroup__title"><span class="skillgroup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span> Cloud &amp; data</h3>
+          <ul class="chips">
+            <li>Microsoft Azure</li><li>Azure SQL</li><li>Blob Storage</li><li>App Service</li><li>MySQL</li><li>SQL Server</li>
+          </ul>
+        </div>
+
+        <div class="skillgroup reveal">
+          <h3 class="skillgroup__title"><span class="skillgroup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><line x1="6.5" y1="12" x2="9.5" y2="12"/><line x1="8" y1="10.5" x2="8" y2="13.5"/><line x1="15.5" y1="11" x2="15.51" y2="11"/><line x1="18" y1="13.5" x2="18.01" y2="13.5"/></svg></span> Game development</h3>
+          <ul class="chips">
+            <li>Godot 4</li><li>GDScript</li><li>Tilemaps &amp; physics</li><li>Scene architecture</li>
+          </ul>
+        </div>
+
+        <div class="skillgroup reveal">
+          <h3 class="skillgroup__title"><span class="skillgroup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span> Tools &amp; practices</h3>
+          <ul class="chips">
+            <li>Git &amp; GitHub</li><li>GitHub Actions (CI/CD)</li><li>Visual Studio</li><li>OOP &amp; clean architecture</li><li>Agile mindset</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title">Get in touch</h2>
+        <span class="section__line"></span>
+      </div>
+
+      <div class="contact__inner reveal">
+        <h3 class="contact__title">Let's build something.</h3>
+        <p class="contact__lead">
+          I'm actively looking for <strong>junior developer opportunities</strong> — open to internships,
+          graduate programmes and freelance work. If you've got a role, a project, or just want to talk
+          code, my inbox is always open.
+        </p>
+
+        <div class="contact__cards">
+          <a class="contact-card" href="mailto:marclourens1901@gmail.com">
+            <span class="contact-card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">marclourens1901@gmail.com</span>
+          </a>
+          <a class="contact-card" href="https://github.com/marclourens19" target="_blank" rel="noopener">
+            <span class="contact-card__ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+            <span class="contact-card__label">GitHub</span>
+            <span class="contact-card__value">@marclourens19</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/joshua-lourens-a26a11244" target="_blank" rel="noopener">
+            <span class="contact-card__ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.96H5.56v8.38h2.78zM6.95 8.73a1.61 1.61 0 1 0 0-3.22 1.61 1.61 0 0 0 0 3.22zM18.44 18.34v-4.6c0-2.46-1.31-3.6-3.06-3.6-1.41 0-2.04.78-2.39 1.32v-1.13h-2.78c.04.79 0 8.38 0 8.38h2.78v-4.68c0-.25.02-.5.09-.68.2-.5.66-1.02 1.43-1.02 1.01 0 1.41.77 1.41 1.9v4.48h2.79z"/></svg></span>
+            <span class="contact-card__label">LinkedIn</span>
+            <span class="contact-card__value">joshua-lourens</span>
+          </a>
+        </div>
+
+        <a class="btn btn--primary contact__cta" href="mailto:marclourens1901@gmail.com?subject=Portfolio%20enquiry">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me directly
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__brand">JL</span>
+      <p>Designed &amp; built from scratch by Joshua Lourens — no templates, just code.</p>
+      <p class="footer__copy">© <span id="year"></span> Joshua Marc Lourens</p>
+    </div>
+  </footer>
+
+  <button class="totop" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿Drop project screenshots here to replace the cover art. Filenames the cards look for: chatbot.png, eventease.png, nipponquest.png, godot.png, jlpt.png. ~1200x750 (16:10) looks best. If a file is absent, the card shows its gradient cover instead.

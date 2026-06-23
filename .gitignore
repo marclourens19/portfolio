@@ -1,0 +1,7 @@
+# Local editor / harness config (references local-only paths)
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.log
