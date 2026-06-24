@@ -8,15 +8,12 @@
   <meta name="description" content="Joshua Marc Lourens — junior software developer building secure desktop apps, cloud web platforms, and clean code in C#, .NET, Azure and Java." />
   <meta name="author" content="Joshua Marc Lourens" />
 
-  <!-- Open Graph / social preview -->
   <meta property="og:title" content="Joshua Lourens — Junior Software Developer" />
   <meta property="og:description" content="Secure desktop apps, cloud web platforms, and clean code in C#, .NET, Azure & Java." />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon: JL monogram (inline SVG) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0e16'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' text-anchor='middle' fill='%2333e1ed'%3EJL%3C/text%3E%3C/svg%3E" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -24,16 +21,12 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Glow cursor (desktop) -->
   <div class="cursor-glow" aria-hidden="true"></div>
 
-  <!-- Scroll progress bar -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Skip link for accessibility -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#home" class="brand" aria-label="Joshua Lourens — home">
@@ -59,7 +52,6 @@
   </header>
 
   <main id="main">
-    <!-- ===================== HERO ===================== -->
     <section class="hero" id="home">
       <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
       <div class="hero__grid" aria-hidden="true"></div>
@@ -94,7 +86,6 @@
       </div>
     </section>
 
-    <!-- ===================== ABOUT ===================== -->
     <section class="section about" id="about">
       <div class="section__head reveal">
         <span class="section__index">01</span>
@@ -169,7 +160,6 @@
       </div>
     </section>
 
-    <!-- ===================== PROJECTS ===================== -->
     <section class="section projects" id="projects">
       <div class="section__head reveal">
         <span class="section__index">02</span>
@@ -191,7 +181,6 @@
 
       <div class="projects__grid" id="projectsGrid">
 
-        <!-- FEATURED 1 -->
         <article class="card card--feature reveal" data-tags="desktop csharp">
           <div class="card__glow" aria-hidden="true"></div>
           <div class="card__media" style="--c1:#0c3540;--c2:#0a1018">
@@ -221,7 +210,6 @@
           </ul>
         </article>
 
-        <!-- FEATURED 2 -->
         <article class="card card--feature reveal" data-tags="web csharp">
           <div class="card__glow" aria-hidden="true"></div>
           <div class="card__media" style="--c1:#1a2150;--c2:#0a1018">
@@ -251,7 +239,6 @@
           </ul>
         </article>
 
-        <!-- FEATURED 3: NipponQuest -->
         <article class="card card--feature reveal" data-tags="web csharp games">
           <div class="card__glow" aria-hidden="true"></div>
           <div class="card__media" style="--c1:#3a1442;--c2:#0a1018">
@@ -281,11 +268,10 @@
           </ul>
         </article>
 
-        <!-- SMALL: Godot game -->
         <article class="card reveal" data-tags="games">
           <div class="card__glow" aria-hidden="true"></div>
           <div class="card__media" style="--c1:#13294a;--c2:#0a1018">
-            <img src="assets/shots/godot.png" alt="Godot platformer screenshot" class="card__shot" onerror="this.remove()" />
+            <img src="assets/shots/2d_platformer.png" alt="Godot platformer screenshot" class="card__shot" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom;" onerror="this.remove()" />
             <svg class="card__media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><line x1="6.5" y1="12" x2="9.5" y2="12"/><line x1="8" y1="10.5" x2="8" y2="13.5"/><line x1="15.5" y1="11" x2="15.51" y2="11"/><line x1="18" y1="13.5" x2="18.01" y2="13.5"/></svg>
           </div>
           <div class="card__top">
@@ -304,7 +290,6 @@
           <ul class="card__tech"><li>Godot 4</li><li>GDScript</li><li>Game physics</li></ul>
         </article>
 
-        <!-- SMALL: JLPT N5 Study Companion -->
         <article class="card reveal" data-tags="web">
           <div class="card__glow" aria-hidden="true"></div>
           <div class="card__media" style="--c1:#0c3a33;--c2:#0a1018">
@@ -337,7 +322,6 @@
           </ul>
         </article>
 
-        <!-- CTA card -->
         <article class="card card--add reveal" data-tags="all">
           <div class="card__addinner">
             <span class="card__plus">↗</span>
@@ -352,7 +336,6 @@
       </div>
     </section>
 
-    <!-- ===================== SKILLS ===================== -->
     <section class="section skills" id="skills">
       <div class="section__head reveal">
         <span class="section__index">03</span>
@@ -398,7 +381,6 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
     <section class="section contact" id="contact">
       <div class="section__head reveal">
         <span class="section__index">04</span>
@@ -438,7 +420,6 @@
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="footer__inner">
       <span class="footer__brand">JL</span>
